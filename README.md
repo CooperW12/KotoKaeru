@@ -1,2 +1,3 @@
 # KotoKaeru
-Resources for Japanese Language 
+Resources for Japanese Language Learning 
+
