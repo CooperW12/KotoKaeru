@@ -1,7 +1,8 @@
 from databaseManager import verbDB
 
+
 def teForm(verb, vType):
-    
+
     if vType == 'る':
         teVerb = verb[:len(verb) - 1] + 'て'
 
