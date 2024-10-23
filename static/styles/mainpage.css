@@ -1,0 +1,68 @@
+body {
+    height:125vh;
+    background-image: linear-gradient(
+		rgb(216, 191, 161) 30%,
+		#504430 70%);
+    margin-top: 0px;
+    background-size:auto;
+    z-index: 0;
+}
+
+h1{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 100px;
+    
+}
+
+h2{
+    text-align: center;
+    margin-top: 0px;
+    font-size: 33px;
+}
+
+#kotoH{
+    position:relative;
+    left: -150px;
+    bottom: 20px;
+}
+
+#kaeruH{
+    position:relative;
+    left: -45px;
+    bottom: 90px;
+}
+
+#kotoE{
+    position:relative;
+    left: -145px;
+    bottom: 120px;
+}
+
+#kaeruE{
+    position:relative;
+    left: -20px;
+    bottom: 185px;
+}
+
+#start-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    height: 150px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;   
+    background-image: linear-gradient(
+    rgb(218, 179, 214) 20%,
+    rgb(233, 189, 189) 70%
+    ); 
+    border-radius: 10px;
+    border-color: black;
+    color: black;
+    text-decoration: dotted;
+    border-style: double;
+    border-width: 10px;
+}

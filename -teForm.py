@@ -40,4 +40,3 @@ if not vType.empty:
 else:
     print(f"Verb '{verb}' not found in database")
     
-    
