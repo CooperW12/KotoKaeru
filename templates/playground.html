@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
     <head>
@@ -8,7 +7,14 @@
 
     
     <body>
-        
+        <form action='/playground' method='post'>
+            <label for='verb'>Enter a verb</label>
+            <input type='text' id='verb' name='verb' placeholder='type verb' required>
+            <button type='submit'>convert to te-form</button>
+            
+        </form>
+
+            <h3>te-form: {{teVerb}}</h3>
         
     </body>
 
