@@ -17,6 +17,10 @@ if not vType.empty:
     
     verb = Verb(inVerb, kanji, vType, translation)
     
+    print(verb.hiragana, '-->', verb.teForm())
+    print(verb.hiragana, '-->', verb.pastForm())
     print(verb.hiragana, '-->', verb.negForm())
+    print(verb.hiragana, '-->', verb.pastNegForm())
+    
 else:
     print(f"Verb '{inVerb}' not found in database")

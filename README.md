@@ -1,6 +1,12 @@
 # KotoKaeru
 Resources for Japanese Language Learning 
 
+## Version 0.40
+- added past and past negative forms to verb class and playground test
+- added romaji -> hiragana to the playground!
+- added a WIP verb search to the playground!
+- tripled the number of verbs in the 'database' (+30)
+
 ## Version 0.30
 - added romaji -> hiragana python file
 - created verb class for ease of use

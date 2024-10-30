@@ -1,7 +1,3 @@
-
-
-romajiIn = input('input romaji: ')
-
 translations = {
 'a' : 'あ', 'ka' : 'か', 'sa' : 'さ', 'ta' : 'た', 'na' : 'な', 'ha' : 'は', 'ma' : 'ま', 'ya' : 'や', 'ra' : 'ら', 'wa' : 'わ',
 'i' : 'い', 'ki' : 'き', 'shi': 'し', 'chi': 'ち', 'ni' : 'に', 'fu' : 'ふ', 'mi' : 'み',              'ri' : 'り',
@@ -46,29 +42,33 @@ threeCharTranslations = {
 'gyu' : 'ぎゅ', 'jyu' : 'じゅ', 'dyu' : 'ぢゅ',         'byu' : 'びゅ', 'pyu' : 'ぴゅ',
 'gyo' : 'ぎょ', 'jyo' : 'じょ', 'dyo' : 'ぢょ',         'byo' : 'びょ', 'pyo' : 'ぴょ'
 }
-
-done = False
-lookingAtIndex = 0
-currentTrans = []
-lookingAt = ''
-for i in range(len(romajiIn)):
-    lookingAt = lookingAt + romajiIn[i]
-    if lookingAt in oneCharTranslations.keys():
-        currentTrans.append(translations[lookingAt])
-        lookingAt = ''
-    elif lookingAt in twoCharTranslations.keys():
-        currentTrans.append(translations[lookingAt])
-        lookingAt = ''
-    elif lookingAt in threeCharTranslations.keys():
-        currentTrans.append(translations[lookingAt])
-        lookingAt = ''
-    else:
-        pass
+def convRomToHir(romajiIn):
+    done = False
+    lookingAtIndex = 0
+    currentTrans = []
+    lookingAt = ''
+    romajiIn = romajiIn.lower()
+    for i in range(len(romajiIn)):
+        lookingAt = lookingAt + romajiIn[i]
+        if lookingAt in oneCharTranslations.keys():
+            currentTrans.append(translations[lookingAt])
+            lookingAt = ''
+        elif lookingAt in twoCharTranslations.keys():
+            currentTrans.append(translations[lookingAt])
+            lookingAt = ''
+        elif lookingAt in threeCharTranslations.keys():
+            currentTrans.append(translations[lookingAt])
+            lookingAt = ''
+        else:
+            pass
+            
+        done = True
         
-    done = True
-      
-finalTrans = ''
-for hira in currentTrans:
-    finalTrans = finalTrans + hira
+    finalTrans = ''
+    for hira in currentTrans:
+        finalTrans = finalTrans + hira
+        
+    return finalTrans  
     
-print(finalTrans)  
+#romajiIn = input('input romaji: ')
+#print(convRomToHir(romajiIn))

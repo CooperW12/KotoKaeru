@@ -5,7 +5,7 @@ class Verb:
         self.kanji = str(kanji)
         self.vType = str(vType)
         self.translation = str(translation)
-        
+    
     def teForm(self):
 
         if self.vType == 'る':
@@ -69,6 +69,15 @@ class Verb:
         
         return negVerb 
         
+    def pastForm(self):
+        teForm = self.teForm()
+        pastForm = teForm[:len(teForm) - 1] + 'た'
+        return pastForm
     
+    def pastNegForm(self):
+        negForm = self.negForm()
+        pastNegForm = negForm[:len(negForm) - 1] + 'かった'
+        return pastNegForm
+        
     
     

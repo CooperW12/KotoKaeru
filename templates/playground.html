@@ -1,20 +1,84 @@
 <html>
 
     <head>
-       
         <title>playground</title> <link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='styles/playground.css') }}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
-    
     <body>
-        <form action='/playground' method='post'>
-            <label for='verb'>Enter a verb</label>
-            <input type='text' id='verb' name='verb' placeholder='type verb' required>
-            <button type='submit'>convert to te-form</button>
-            
-        </form>
+        <a id='home' href='/'>return home</a>
+        <h2>Welcome to the playground</h2>
+        <p>this is where I test stuff</p>
 
-            <h3>te-form: {{teVerb}}</h3>
+        <div>
+
+            <h2>[WIP] verb to forms</h2>
+
+
+            <form action='/playground' method='post'>
+                <input type='hidden' name='formType' value='verbForm'>
+                <label for='verb'>Enter a verb: </label>
+                <input type='text' id='verb' name='verb' placeholder='ex. あける'>
+                <button type='submit'>convert to forms</button>
+            </form>
+
+            <h3>conversions:</h3>
+                <p>
+                    te-form:       {{teVerb}} <br>
+                    past:          {{pastVerb}} <br>
+                    negative:      {{negVerb}} <br>
+                    past negative: {{pastNegVerb}}
+                </p>
+
+        </div>
+
+        <div>
+            <h2>Romaji (English) to Japanese (Hiragana)</h2>
+            <form action='/playground' method='post'>
+                <input type='hidden' name='formType' value='romajiForm'>
+                <label for='romIn'>Enter romaji (no spaces): </label>
+                <input type='text' id='romIn' name='romIn' placeholder='ex. tsunami'>
+                <button type='submit'>convert to hiragana</button>
+            </form>
+
+            <p>conversion: {{romToHir}}</p>
+        </div>
+
+
+        <div> 
+            <h2>[WIP] Autocomplete searching with the verb database</h2>
+            
+            <form>
+                <label for="textInput">Begin typing Japanese verb: </label>
+                <input type="text" id="textInput" name="textInput" placeholder='type here'>
+            </form>
+            
+            <p>Top Verb: <span id="outputText"></span></p>
+            <p>Top Kanji: <span id="outputText2"></span></p>
+        
+            <script>
+                $(document).ready(function() {
+                    $('#textInput').on('input', function() {
+                        const currentText = $(this).val();
+                        
+                        $.ajax({
+                            type: 'POST',
+                            url: '/getInput',
+                            contentType: 'application/json',
+                            data: JSON.stringify({ currentText: currentText }),
+                            success: function(response) {
+                                if (Array.isArray(response.processedText)) {
+                                    $('#outputText').text(response.processedText[0]); 
+                                    $('#outputText2').text(response.processedText[1]); 
+                                } else {
+                                    $('#outputText').text(response.processedText);  
+                                    $('#outputText2').text('');  
+                                }
+                            }
+                        });
+                    });
+                });
+            </script>
         
     </body>
 
