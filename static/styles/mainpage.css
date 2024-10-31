@@ -1,68 +1,140 @@
 body {
-    height:125vh;
-    background-image: linear-gradient(
-		rgb(216, 191, 161) 30%,
-		#504430 70%);
+    background-size: cover;
+    background-color: #3B3B3B;
     margin-top: 0px;
     background-size:auto;
     z-index: 0;
 }
 
 h1{
-    text-align: center;
+    color: white;
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 100px;
-    
+    font-family: cursive;
 }
 
 h2{
-    text-align: center;
+    color: white;
     margin-top: 0px;
     font-size: 33px;
 }
-
+#logo{
+    position:relative;
+    left: 50px;
+    top:30px
+}
 #kotoH{
     position:relative;
-    left: -150px;
+    left: 15px;
     bottom: 20px;
 }
 
 #kaeruH{
     position:relative;
-    left: -45px;
+    left: 135px;
     bottom: 90px;
 }
 
 #kotoE{
     position:relative;
-    left: -145px;
+    left: 15px;
     bottom: 120px;
 }
 
 #kaeruE{
     position:relative;
-    left: -20px;
+    left: 130px;
     bottom: 185px;
 }
 
-#start-button{
+.button{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    height: 150px;
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;   
-    background-image: linear-gradient(
-    rgb(218, 179, 214) 20%,
-    rgb(233, 189, 189) 70%
-    ); 
-    border-radius: 10px;
+    height: 100px;
+    width: 200px;  
+    background-color: #878787;
+    border-radius: 5px;
     border-color: black;
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: dotted;
-    border-style: double;
-    border-width: 10px;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.button:hover{
+    background-color: rgb(87, 87, 87);
+    color: rgb(172, 172, 172);
+    transition: all 200ms ease;
+}
+
+.toprow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 500px;
+    height: auto;
+    position: absolute;
+    top:80;
+    left: 550px;
+    justify-content: space-between;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    height:1000px;
+    flex-wrap:nowrap;
+    position: relative;
+    justify-content:flex-start;
+    transition: all 1s;
+}
+
+.colitem{
+    position: absolute;
+    top:0;
+    left:0;
+    transition: transform .5s;
+    transform: translateY(0);
+}
+
+.colitem:nth-child(1) {
+    z-index: 2;
+}
+
+.colitem:nth-child(2) {
+    z-index: 1;
+}
+
+.colitem:nth-child(3) {
+    z-index: 0;
+}
+
+
+.col:hover .colitem:nth-child(1),
+.colitem:nth-child(1):hover {
+    transform: translateY(0px);
+}
+
+.col:hover .colitem:nth-child(2),
+.colitem:nth-child(2):hover {
+    transform: translateY(105px);
+}
+
+.col:hover .colitem:nth-child(3),
+.colitem:nth-child(3):hover {
+    transform: translateY(210px);
+}
+
+.leftcol{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    height: 400px;
+    position: relative;
+    bottom: 150px;
+    left: 75px;
+    justify-content: space-between;
 }

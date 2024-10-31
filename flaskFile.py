@@ -11,6 +11,10 @@ app = Flask(__name__)
 def homepage():
     return render_template('mainpage.html')
 
+@app.route("/verbdatabase")
+def verbdatabase():
+    return render_template('verbdatabase.html')
+
 @app.route("/playground", methods=['GET', 'POST'])
 def playground():
     teVerb = 'NONE'

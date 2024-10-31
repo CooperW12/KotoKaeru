@@ -1,6 +1,11 @@
 # KotoKaeru
 Resources for Japanese Language Learning 
 
+## Version 0.45
+- redesigned the mainpage it looks cool now 
+- restructured the html file to make more sense (for mainpage)
+- added a new verb database page (empty)
+
 ## Version 0.40
 - added past and past negative forms to verb class and playground test
 - added romaji -> hiragana to the playground!
